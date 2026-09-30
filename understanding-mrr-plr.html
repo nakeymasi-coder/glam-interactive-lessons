@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Understanding MRR &amp; PLR | The Glam Vault</title><meta name="description" content="Practice reading product licenses with this guided Glam Vault lesson."><meta name="robots" content="noindex,nofollow"><style>html{background:#e8eff5}body{margin:0;padding:24px 12px;font-family:Arial,sans-serif}button:not(:disabled),label{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #005b9e;outline-offset:4px}@media(max-width:440px){body{padding:12px 8px}}</style></head><body><div id="vault-rights-lesson">
+ <style>
+ #vault-rights-lesson{--sapphire:#0067b9;--ink:#102a43;--silver:#cad5df;--paper:#fff;font:16px/1.55 Arial,sans-serif;color:var(--ink);background:var(--paper);border-radius:20px;overflow:hidden;max-width:736px;margin:auto}
+ #vault-rights-lesson *{box-sizing:border-box}
+ #vault-rights-lesson header{padding:20px 24px;background:linear-gradient(115deg,#003d79,#007bbd);color:#fff}
+ #vault-rights-lesson .eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;margin:0 0 5px}
+ #vault-rights-lesson h1{font:500 28px/1.2 Georgia,serif;margin:0}
+ #vault-rights-lesson .stepbar{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:14px}
+ #vault-rights-lesson .track{height:5px;background:#ffffff35;margin-top:10px;border-radius:4px;overflow:hidden}
+ #vault-rights-lesson .fill{height:100%;background:#e4edf5;transition:width .4s}
+ #vault-rights-lesson main{padding:22px 24px}
+ #vault-rights-lesson h2{font:500 25px/1.25 Georgia,serif;margin:0 0 10px}
+ #vault-rights-lesson p{margin:8px 0 16px}
+ #vault-rights-lesson .guide{display:flex;gap:12px;align-items:center;margin-bottom:20px;border-bottom:1px solid #e1e7ee;padding-bottom:16px}
+ #vault-rights-lesson .guide-label{color:#005b9e;white-space:nowrap;font-weight:600}
+ #vault-rights-lesson .guide p{margin:0;font-size:14px}
+ #vault-rights-lesson .license{background:#eef5fc;border-left:4px solid var(--sapphire);padding:16px;margin:16px 0;border-radius:0 10px 10px 0}
+ #vault-rights-lesson .license b{display:block;margin-bottom:6px}
+ #vault-rights-lesson .license ul{padding-left:20px;margin:0}
+ #vault-rights-lesson button{font:inherit;border:1px solid #bdccd9;color:var(--ink);background:#fff;border-radius:10px;min-height:46px;padding:10px 16px}
+ #vault-rights-lesson button:disabled{opacity:.45;cursor:default}
+ #vault-rights-lesson .primary{background:var(--sapphire);border-color:var(--sapphire);color:#fff}
+ #vault-rights-lesson .choices{display:grid;gap:10px;margin:16px 0}
+ #vault-rights-lesson .choices button{text-align:left}
+ #vault-rights-lesson .choices button[aria-pressed="true"]{border:2px solid var(--sapphire);background:#eaf5ff}
+ #vault-rights-lesson .feedback{padding:14px 16px;background:#f1f5f9;border-radius:10px;margin:14px 0}
+ #vault-rights-lesson .feedback:empty{display:none}
+ #vault-rights-lesson footer{display:flex;justify-content:space-between;gap:12px;padding:0 24px 22px}
+ #vault-rights-lesson .stage{display:flex;align-items:center;justify-content:center;gap:18px;min-height:120px;margin:16px 0}
+ #vault-rights-lesson .product{position:relative;padding:20px 14px;min-width:100px;text-align:center;background:linear-gradient(130deg,#005ba6,#003e78);color:#fff;border:3px solid #cbd7e2;border-radius:12px;box-shadow:4px 5px 0 #d9e2eb;transition:transform .5s,background .5s}
+ #vault-rights-lesson .product.transformed{transform:rotate(-5deg);background:linear-gradient(130deg,#008ac4,#005ba6)}
+ #vault-rights-lesson .destination{padding:12px;border-bottom:2px solid var(--silver);font-size:14px}
+ #vault-rights-lesson .moving{animation:transfer .7s ease both}
+ #vault-rights-lesson .reminder{font-size:14px;color:#425b70}
+ #vault-rights-lesson .checks{display:grid;gap:10px;margin:16px 0}
+ #vault-rights-lesson .checks label{display:flex;align-items:flex-start;gap:10px;padding:9px 0}
+ #vault-rights-lesson input{width:20px;height:20px;flex-shrink:0;accent-color:var(--sapphire)}
+ @keyframes transfer{from{transform:translateX(-30px)}to{transform:translateX(0)}}
+ @media(max-width:440px){#vault-rights-lesson main{padding:18px}#vault-rights-lesson header{padding:18px}#vault-rights-lesson footer{padding:0 18px 18px}#vault-rights-lesson .guide{align-items:flex-start;flex-direction:column;gap:4px}#vault-rights-lesson .stage{gap:12px}}
+ @media(prefers-reduced-motion:reduce){#vault-rights-lesson *{animation:none!important;transition:none!important}}
+ </style>
+ <header><p class="eyebrow">The Glam Vault · Learn by doing</p><h1>Understanding MRR &amp; PLR</h1><div class="stepbar"><span id="vr-step"></span><span>Guided by Sapphire</span></div><div class="track"><div class="fill" id="vr-progress"></div></div></header>
+ <main><div class="guide"><span class="guide-label">Sapphire says</span><p id="vr-guide"></p></div><section id="vr-content" aria-label="Current lesson"></section><div id="vr-feedback" class="feedback" aria-live="polite"></div></main>
+ <footer><button type="button" id="vr-back" class="cursor-interaction">Back</button><button type="button" id="vr-next" class="primary cursor-interaction">Start lesson</button></footer>
+ <script>
+ (()=>{
+ const root=document.getElementById('vault-rights-lesson');
+ const content=root.querySelector('#vr-content'),feedback=root.querySelector('#vr-feedback'),next=root.querySelector('#vr-next'),back=root.querySelector('#vr-back');
+ let step=0;const answers={},explored={},checks=new Set();
+ const screens=[
+ {title:'The label is only the beginning.',guide:'We’ll use sample licenses, then you’ll decide what you can do.',body:'<p>MRR means <b>Master Resell Rights</b>. PLR means <b>Private Label Rights</b>. Neither label gives unlimited permission.</p><div class="license"><b>Your most important tool: the written license.</b>Check what it permits before editing, selling, or sharing rights.</div><p class="reminder">These are learning examples, not licenses for your own products.</p>'},
+ {title:'Try an MRR example',guide:'Reselling and passing resale rights are separate permissions. Read both.',body:'<div class="license"><b>Sample MRR license</b><ul><li>You may sell this product as-is.</li><li>You may pass these same resale rights to buyers.</li><li>You may not edit or rename it.</li></ul></div><div class="stage"><div class="product" id="vr-product">Original<br>Product</div><div class="destination" id="vr-destination">Your store</div></div><div class="choices"><button type="button" data-action="sell">Try selling it as-is</button><button type="button" data-action="edit">Try renaming it</button></div>'},
+ {title:'Try a PLR example',guide:'Customization is allowed here. Passing PLR to buyers is not.',body:'<div class="license"><b>Sample PLR license</b><ul><li>You may edit the content and change the branding.</li><li>You may sell your finished version.</li><li>You may not give buyers PLR or resale rights.</li></ul></div><div class="stage"><div class="product" id="vr-product">Original<br>Product</div><div class="destination" id="vr-destination">Your brand</div></div><div class="choices"><button type="button" data-action="brand">Try changing the branding</button><button type="button" data-action="rights">Try giving buyers PLR</button></div>'},
+ {title:'Your turn: change the cover?',guide:'Use the actual wording, not the name of the rights.',license:'You may resell this product as-is. No edits, including changes to the cover, are permitted.',question:'Can you replace the cover with your own design?',options:['Yes, because I bought it.','No, this license prohibits editing.'],correct:1,explain:'This license allows resale, but it explicitly forbids editing the cover. Buying a product does not grant extra permissions.'},
+ {title:'Your turn: pass along rights?',guide:'Permission to customize doesn’t automatically transfer to your customer.',license:'You may customize and sell the finished product. Buyers receive personal-use rights only.',question:'Can you tell customers they may resell it?',options:['Yes, because I have PLR.','No, buyers receive personal-use rights only.'],correct:1,explain:'Your license allows you to customize and sell. It specifies personal use for buyers, so you cannot grant them resale rights.'},
+ {title:'Your turn: inside The Glam Vault',guide:'Selling membership access and distributing Vault content are different things.',license:'Your rights cover selling membership access. Private resources may not be distributed unless separate written permission is provided.',question:'Can you upload a private Vault lesson to your store and sell it?',options:['No, membership resale rights don’t permit that.','Yes, because I can sell membership access.'],correct:0,explain:'Membership resale rights cover access only. Private lessons and resources require separate written permission before distribution.'},
+ {title:'Practice with a real product',guide:'Before you list a product, find its license and check these four things.',body:'<p>Open the license for a product you own. Find the answers below. If a permission is unclear, ask the rights holder before listing it.</p><div class="checks"><label><input type="checkbox" data-check="0">I checked whether I may edit or rebrand it.</label><label><input type="checkbox" data-check="1">I checked whether and how I may sell it, including pricing rules.</label><label><input type="checkbox" data-check="2">I checked which rights my buyers receive.</label><label><input type="checkbox" data-check="3">I saved a copy of the license.</label></div><p class="reminder">Your progress is for this session only; it is not recorded in Skool.</p>'}
+ ];
+ function render(){const s=screens[step];root.querySelector('#vr-step').textContent='Step '+(step+1)+' of '+screens.length;root.querySelector('#vr-progress').style.width=((step+1)/screens.length*100)+'%';root.querySelector('#vr-guide').textContent=s.guide;content.innerHTML='<h2>'+s.title+'</h2>'+(s.body||'<div class="license"><b>Sample license</b>'+s.license+'</div><p>'+s.question+'</p><div class="choices">'+s.options.map((o,i)=>'<button type="button" class="cursor-interaction" data-answer="'+i+'" aria-pressed="'+(answers[step]===i)+'">'+o+'</button>').join('')+'</div>');feedback.textContent='';back.disabled=step===0;next.hidden=false;next.textContent=step===0?'Start lesson':step===6?'Finish lesson':'Next';next.disabled=Boolean(s.options&&answers[step]!==s.correct)||Boolean((step===1||step===2)&&!explored[step])||(step===6&&checks.size!==4);if(s.options&&answers[step]!==undefined)showAnswer(answers[step]);if(step===6){content.querySelectorAll('input').forEach(el=>{el.checked=checks.has(el.dataset.check);});}content.querySelectorAll('button').forEach(el=>el.classList.add('cursor-interaction'));}
+ function showAnswer(i){const s=screens[step];feedback.textContent=(i===s.correct?'Correct. ':'Take another look. ')+s.explain;next.disabled=i!==s.correct;content.querySelectorAll('[data-answer]').forEach(el=>el.setAttribute('aria-pressed',Number(el.dataset.answer)===i?'true':'false'));}
+ content.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.dataset.answer!==undefined){answers[step]=Number(b.dataset.answer);showAnswer(answers[step]);return;}if(b.dataset.action){explored[step]=true;next.disabled=false;const product=content.querySelector('#vr-product'),dest=content.querySelector('#vr-destination');product.classList.remove('moving','transformed');void product.offsetWidth;switch(b.dataset.action){case 'sell':product.classList.add('moving');dest.textContent='Same product → buyer';feedback.textContent='Allowed by this sample license. Keep it as-is and pass only the resale rights it specifies.';break;case 'edit':dest.textContent='Rename blocked';feedback.textContent='Not allowed by this sample license. Resale permission does not include permission to rename it.';break;case 'brand':product.classList.add('transformed');product.innerHTML='Your Branded<br>Version';dest.textContent='Ready for your store';feedback.textContent='Allowed by this sample license. You may customize and sell the finished version.';break;case 'rights':product.innerHTML='Original<br>Product';dest.textContent='Passing PLR blocked';feedback.textContent='Not allowed by this sample license. Buyers cannot receive PLR or resale rights.';break;}}});
+ content.addEventListener('change',e=>{if(e.target.matches('[data-check]')){e.target.checked?checks.add(e.target.dataset.check):checks.delete(e.target.dataset.check);next.disabled=checks.size!==4;}});
+ next.addEventListener('click',()=>{if(step<6){step++;render();}else{content.innerHTML='<h2>Lesson complete</h2><div class="license"><b>The license decides.</b>MRR focuses on resale and permitted transfer of resale rights. PLR focuses on customization. Always check the written permissions.</div><p>You practiced three scenarios and completed your license checklist.</p>';root.querySelector('#vr-guide').textContent='You’re ready to check permissions before you create an offer.';feedback.textContent='Completion is shown here only. It has not been saved to your community.';next.hidden=true;}});
+ back.addEventListener('click',()=>{if(step>0){step--;render();}});render();
+ })();
+ </script>
+</div>
+</body></html>
